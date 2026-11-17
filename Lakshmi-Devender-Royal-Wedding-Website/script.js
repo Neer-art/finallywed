@@ -1,3 +1,12 @@
+// Explore button: smoothly reveal the invitation details below the welcome screen.
+const exploreButton = document.getElementById("exploreBtn");
+const countdownSection = document.getElementById("countdown");
+if (exploreButton && countdownSection) {
+  exploreButton.addEventListener("click", () => {
+    countdownSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
 // Live countdown: main wedding celebration / Barat reception, 13 Dec 2026 at 7 PM IST.
 const weddingDate = new Date("2026-12-13T19:00:00+05:30");
 const pad = n => String(n).padStart(2, "0");
@@ -21,20 +30,6 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
-
-// Explore invitation: move from the welcome cover to the next section below it.
-const exploreButton = document.getElementById("exploreBtn");
-const countdownSection = document.getElementById("countdown");
-if (exploreButton && countdownSection) {
-  exploreButton.addEventListener("click", () => {
-    countdownSection.classList.remove("invitation-arrival");
-    // Restart the entrance animation on every tap.
-    void countdownSection.offsetWidth;
-    countdownSection.classList.add("invitation-arrival");
-    countdownSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-}
 
 // Responsive navigation.
 const menuToggle = document.querySelector(".menu-toggle");
