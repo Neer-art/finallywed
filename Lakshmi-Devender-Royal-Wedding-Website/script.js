@@ -22,6 +22,20 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+
+// Explore invitation: move from the welcome cover to the next section below it.
+const exploreButton = document.getElementById("exploreBtn");
+const countdownSection = document.getElementById("countdown");
+if (exploreButton && countdownSection) {
+  exploreButton.addEventListener("click", () => {
+    countdownSection.classList.remove("invitation-arrival");
+    // Restart the entrance animation on every tap.
+    void countdownSection.offsetWidth;
+    countdownSection.classList.add("invitation-arrival");
+    countdownSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
 // Responsive navigation.
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");

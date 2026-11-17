@@ -15,3 +15,15 @@ footer{text-align:center;background:#270610;color:#e5d2ae;padding:42px 20px 32px
 @media(max-width:900px){.header{padding:0 5%}.nav{gap:15px}.nav a{font-size:9px}.event-list{grid-template-columns:repeat(2,1fr)}.section{padding:78px 7%}}
 @media(max-width:650px){.topline{font-size:7px;letter-spacing:1px}.header{height:65px}.menu-toggle{display:block;margin-left:auto;margin-right:14px;border:0;background:none;color:#f4dca9;font-size:24px}.nav{display:none;position:absolute;top:65px;left:0;right:0;background:#390a1b;padding:22px;flex-direction:column;gap:19px;border-top:1px solid #b78d51}.nav.open{display:flex}.nav a{font-size:11px}.share-top{padding:9px 12px}.share-top span{display:none}.hero{height:690px;min-height:0;background-position:center}.hero-border{inset:9px}.hero h1{font-size:75px;gap:12px;flex-direction:column;line-height:.7}.hero h1 small{font-size:18px}.hero-date{font-size:11px}.hero-quote{font-size:16px}.floating-flower{font-size:42px}.countdown-card{padding:22px 8px 18px}.timer{gap:7px}.timer div{min-width:53px}.timer strong{font-size:35px}.timer span{font-size:7px}.timer>i{font-size:17px}.section{padding:70px 6%}.invite-grid{grid-template-columns:1fr;gap:36px}.photo-frame{max-width:330px;margin:auto}.invite-text h3{font-size:53px}.parents{gap:7px}.parents p{font-size:12px}.feature{grid-template-columns:1fr}.feature-photo{height:300px;padding:12px}.feature-copy{text-align:center;padding:42px 9%}.celebrations{background-attachment:scroll}.event-list{grid-template-columns:1fr;max-width:420px}.event{display:grid;grid-template-columns:120px 1fr;align-items:center;min-height:135px}.event img{height:115px}.mandap-feature{grid-template-columns:1fr}.mandap-feature>img{height:340px}.mandap-feature>div{text-align:center;padding:42px 9%}.venue{grid-template-columns:1fr;gap:35px}.venue-image{max-width:480px;margin:auto}.venue-image img{height:260px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:170px 170px}.gallery-item.tall{grid-row:span 2}.final-section{grid-template-columns:1fr;gap:35px;padding:62px 7%}.final-photo{max-width:420px;margin:auto}.final-copy{padding:0 4%}.final-actions{flex-direction:column}.final-actions>*{width:100%;justify-content:center}}
 @media(max-width:390px){.timer{gap:4px}.timer div{min-width:47px}.timer strong{font-size:31px}.gallery-grid{gap:8px;grid-template-rows:150px 150px}}
+
+
+/* Invitation reveal: the first page stays as the welcome cover.
+   Tapping Explore Invitation smoothly reveals the countdown and the pages below. */
+.explore-btn { font-family: "Cinzel", serif; }
+.countdown-section.invitation-arrival .countdown-card {
+  animation: invitationArrival .9s ease both;
+}
+@keyframes invitationArrival {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
